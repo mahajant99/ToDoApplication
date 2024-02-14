@@ -13,10 +13,13 @@ import com.mahajant99.todoapplication.model.Task;
 import com.mahajant99.todoapplication.service.TaskService;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/tasks")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class TaskController {
     
