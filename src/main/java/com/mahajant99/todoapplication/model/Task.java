@@ -13,6 +13,9 @@ public class Task {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "description")
+    private String description;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "priority")
     private TaskPriority priority;
@@ -25,8 +28,9 @@ public class Task {
 
     }
 
-    public Task(String name, TaskPriority priority) {
+    public Task(String name, String description, TaskPriority priority) {
         this.name = name;
+        this.description = description;
         this.priority = priority;
         this.status = TaskStatus.Pending;
     }
@@ -45,6 +49,14 @@ public class Task {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getdescription() {
+        return description;
+    }
+
+    public void setdescription(String description) {
+        this.description = description;
     }
 
     public TaskPriority getPriority() {
