@@ -25,4 +25,8 @@ public class TaskService {
     public Task createTask(Task task) {
         return taskRepository.save(task);
     }
+
+    public void deleteTask(Integer id){
+        taskRepository.deleteById(id);
+    }
 }

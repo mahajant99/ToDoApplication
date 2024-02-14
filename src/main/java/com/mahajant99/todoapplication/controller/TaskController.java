@@ -15,7 +15,9 @@ import com.mahajant99.todoapplication.service.TaskService;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/tasks")
@@ -31,10 +33,15 @@ public class TaskController {
         return taskService.getAllTasks();
     }
     
-
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         Task createTask = taskService.createTask(task);
         return ResponseEntity.ok(createTask);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Task> deleteTask(@PathVariable Integer id) {
+        taskService.deleteTask(id);
+        return ResponseEntity.noContent().build();
     }
 }
