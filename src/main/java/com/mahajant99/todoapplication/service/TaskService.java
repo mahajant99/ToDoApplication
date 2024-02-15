@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service;
 import com.mahajant99.todoapplication.model.Task;
 import com.mahajant99.todoapplication.repository.TaskRepository;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class TaskService {
     
     @Autowired
@@ -19,7 +16,6 @@ public class TaskService {
 
     public List<Task> getAllTasks(){
         return taskRepository.findAll();
-        
     }
 
     public Task createTask(Task task) {
