@@ -32,8 +32,8 @@ public class TaskController {
     
     @PostMapping
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
-        Task createTask = taskService.createTask(task);
-        return ResponseEntity.ok(createTask);
+        Task createdTask = taskService.createTask(task);
+        return ResponseEntity.ok(createdTask);
     }
 
     @DeleteMapping("/{id}")
