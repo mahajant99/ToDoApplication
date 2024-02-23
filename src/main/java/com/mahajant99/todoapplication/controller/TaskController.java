@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/tasks")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://notekeeper-hmcw.onrender.com/")
 public class TaskController {
     
     @Autowired
